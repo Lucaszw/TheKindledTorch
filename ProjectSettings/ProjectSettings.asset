@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 12
-  productGUID: 93f543f8910d14984ac90b5622c2f8fa
+  productGUID: f50f254102c9b40069ab7a2f2d8096a8
   AndroidProfiler: 0
   defaultScreenOrientation: 4
   targetDevice: 2
@@ -206,7 +206,11 @@ PlayerSettings:
   iOSURLSchemes: []
   iOSBackgroundModes: 0
   iOSMetalForceHardShadows: 0
+<<<<<<< HEAD
+  metalEditorSupport: 1
+=======
   metalEditorSupport: 0
+>>>>>>> 7506ff95564e1e71eb1f110c824dfc5867bd74f5
   metalAPIValidation: 1
   iOSRenderExtraFrameOnPause: 0
   appleDeveloperTeamID: 
@@ -407,7 +411,11 @@ PlayerSettings:
   ps4DownloadDataSize: 0
   ps4GarlicHeapSize: 2048
   ps4ProGarlicHeapSize: 2560
+<<<<<<< HEAD
+  ps4Passcode: ZkMuDlDgyCZsYKdsd5938UrimP6BdKgB
+=======
   ps4Passcode: dbLMZROaAfZDAWhxgqRqcM1fdhRxRZYw
+>>>>>>> 7506ff95564e1e71eb1f110c824dfc5867bd74f5
   ps4pnSessions: 1
   ps4pnPresence: 1
   ps4pnFriends: 1
@@ -453,7 +461,11 @@ PlayerSettings:
   psp2LiveAreaTrialPath: 
   psp2PatchChangeInfoPath: 
   psp2PatchOriginalPackage: 
+<<<<<<< HEAD
+  psp2PackagePassword: 215DmGuiQTbylCoNHvQOPF6CdDLEVzPV
+=======
   psp2PackagePassword: 3GFhPr6BInZITSBQOgwxhHxrhytFUloi
+>>>>>>> 7506ff95564e1e71eb1f110c824dfc5867bd74f5
   psp2KeystoneFile: 
   psp2MemoryExpansionMode: 0
   psp2DRMType: 0
@@ -586,6 +598,14 @@ PlayerSettings:
     daydream:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
+<<<<<<< HEAD
+  cloudServicesEnabled: {}
+  facebookSdkVersion: 7.9.4
+  apiCompatibilityLevel: 2
+  cloudProjectId: 
+  projectName: 
+  organizationId: 
+=======
   cloudServicesEnabled:
     UNet: 1
   facebookSdkVersion: 7.9.4
@@ -593,6 +613,7 @@ PlayerSettings:
   cloudProjectId: 5968313f-d957-4c9b-b087-825d1bdf0342
   projectName: TheKindledTorch
   organizationId: lucaszw
+>>>>>>> 7506ff95564e1e71eb1f110c824dfc5867bd74f5
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

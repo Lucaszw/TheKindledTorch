@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 518773586}
   - component: {fileID: 518773585}
   - component: {fileID: 518773584}
+  - component: {fileID: 518773589}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -262,6 +263,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &518773589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 518773583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b923b42ae6096499b9cd24df669161e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1909941498
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,6 +395,7 @@ GameObject:
   - component: {fileID: 2035186539}
   - component: {fileID: 2035186538}
   - component: {fileID: 2035186542}
+  - component: {fileID: 2035186543}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -471,3 +484,16 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &2035186543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2035186537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 086aedc18cc914cdd89e9d81a44a2fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  torchprefab: {fileID: 1107934467072478, guid: 4687f86f5b697492ea2ae339190b3b27,
+    type: 2}

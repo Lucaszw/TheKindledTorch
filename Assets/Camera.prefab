@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 124376515765204696}
   - component: {fileID: 92535775688362968}
   - component: {fileID: 81514001924270718}
+  - component: {fileID: 114834638433927336}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -52,7 +53,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -93,6 +94,27 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1297435488271188}
   m_Enabled: 1
+--- !u!114 &114834638433927336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1297435488271188}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45f459add7f794beb92b463d0b1dfee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  torchMax: 100
+  torchMin: 10
+  collisionRadius: 2
+  collisionSearchStep: 0.5
+  maxSearches: 5
+  maxCollisions: 4
+  lineRenderer: {fileID: 0}
+  MIN_TORCH_DISTANCE: 0.1
+  torchprefab: {fileID: 1107934467072478, guid: 5d07d3b41823b415abcd2e8ac3a6bb4d,
+    type: 2}
 --- !u!124 &124376515765204696
 Behaviour:
   m_ObjectHideFlags: 1

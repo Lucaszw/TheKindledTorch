@@ -8,9 +8,11 @@ public class Torch : MonoBehaviour {
     public Vector3 pos; //This is randomly generated on initialization
     public float torchWork = 0;
 
+    public Sprite noFlame; public Sprite halfFlame; public RuntimeAnimatorController fullFlame;
+
 	// Use this for initialization
 	void Start () {
-		//TODO:Get list of potential placement locations
+        //TODO:Get list of potential placement locations
         //Vector3[] locArray = {new Vector3(0f,0f,0f)}; 
         //int arrayLength = locArray.Length;
         //Random number
@@ -31,15 +33,18 @@ public class Torch : MonoBehaviour {
 	void Update () {
         //Check torchWork, to determine what the state should be
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
-        if (torchWork >= 100 && !torchState){
+        if (torchWork >= 100 ){
             torchState = true;
-            //TODO: Update graphics to reflect torch state
-            renderer.color = new Color(1f,1f,1f,1f);
+            //TODO: Update graphics to reflect torch stat
+            renderer.GetComponent<Animator>().runtimeAnimatorController = fullFlame;
         }
-        else if (torchWork <= 0 && torchState){
+        else if (torchWork <= 0){
             torchState = false;
             //TODO: Update graphics to reflect torch state
-            renderer.color = new Color(0f,0f,0f,1f);
+            renderer.sprite = noFlame;
+        }
+        else if (torchWork < 66 && torchWork > 33){
+            renderer.sprite = halfFlame;
         }
 
 		/*if (torchState == true){

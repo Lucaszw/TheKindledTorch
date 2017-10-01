@@ -7,7 +7,7 @@ public class LevelGenerator : MonoBehaviour {
 	// Use this for initialization
     public float torchMax = 100;
     public float torchMin = 10;
-    float MIN_TORCH_DISTANCE = 0.1f; //Minimum distance torches allowed
+    float MIN_TORCH_DISTANCE = 0.5f; //Minimum distance torches allowed
 
 
     float mapWidthMin = -10; float mapWidthMax = 10;
@@ -25,7 +25,7 @@ public class LevelGenerator : MonoBehaviour {
         for (n = 0; n < numTorches; n++){
             float x = Random.Range(mapWidthMin,mapWidthMax);
             float y = Random.Range(mapHeightMin,mapHeightMax);
-            Vector3 newVec = new Vector3(x,y,240f);
+            Vector3 newVec = new Vector3(x,y,0f);
 
             bool placementAllowed = true;
             for (int n2 = 0; n2 < n; n2++){
@@ -33,7 +33,7 @@ public class LevelGenerator : MonoBehaviour {
                 MIN_TORCH_DISTANCE) placementAllowed = false;
             }
             if (placementAllowed == true){
-                torchArray[n] = new Vector3(x,y,240f);
+                torchArray[n] = new Vector3(x,y,0f);
             }
             else{n-=1;}
         }

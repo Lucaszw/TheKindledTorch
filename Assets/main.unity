@@ -390,6 +390,7 @@ GameObject:
   - component: {fileID: 518773586}
   - component: {fileID: 518773585}
   - component: {fileID: 518773584}
+  - component: {fileID: 518773589}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -699,6 +700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9877f56c324ed4e59a0d576415fc3a27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   leftOffset: {x: -0.25, y: 0}
   rightOffset: {x: -0.3, y: 0}
   topOffset: {x: 0, y: 0}
@@ -713,3 +715,44 @@ Transform:
   m_PrefabParentObject: {fileID: 4779891636937656, guid: 0fb5474aae7354347beade79bf0e44f6,
     type: 2}
   m_PrefabInternal: {fileID: 889300596}
+=======
+  upSprite: {fileID: 21300090, guid: b411b36514cdc4f88b76d9e95e83c748, type: 3}
+  downSprite: {fileID: 21300000, guid: b411b36514cdc4f88b76d9e95e83c748, type: 3}
+  leftSprite: {fileID: 21300038, guid: b411b36514cdc4f88b76d9e95e83c748, type: 3}
+  rightSprite: {fileID: 21300114, guid: b411b36514cdc4f88b76d9e95e83c748, type: 3}
+  downAnimation: {fileID: 9100000, guid: 8a767416b487040aa808c53656ad223a, type: 2}
+  leftAnimation: {fileID: 9100000, guid: d855f68a473c9429bbddfd4e28fb3459, type: 2}
+  rightAnimation: {fileID: 9100000, guid: 8d4ac8e3e140145f0a822dc28ee9a2d0, type: 2}
+  upAnimation: {fileID: 9100000, guid: abd263de18b534470866d60a16d53dbf, type: 2}
+  playerNumber: 2
+--- !u!95 &1298080595
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1298080591}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &2035186543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2035186537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 086aedc18cc914cdd89e9d81a44a2fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  torchprefab: {fileID: 1107934467072478, guid: 4687f86f5b697492ea2ae339190b3b27,
+    type: 2}
+>>>>>>> 26f673e771d25a682255eeaf160d7e4694e26598

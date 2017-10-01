@@ -45,6 +45,7 @@ public class Torch : MonoBehaviour {
         }
         else if (torchWork < 66 && torchWork > 33){
             renderer.sprite = halfFlame;
+            renderer.GetComponent<Animator>().runtimeAnimatorController = null;
         }
 
 		/*if (torchState == true){

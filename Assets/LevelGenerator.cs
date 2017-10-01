@@ -24,11 +24,16 @@ public class LevelGenerator : MonoBehaviour {
     public GameObject torchprefab;
 
     int finalNumTorches = 0;
+    Torch[] torchArray;
+
+    public UnityEngine.UI.Text p1; 
+    public UnityEngine.UI.Text p2;
 
     void Start () {
         //Randomly Generate Torches
         int numTorches = (int)Random.Range(torchMin, torchMax);    
-        Vector3[] torchArray = new Vector3[numTorches]; //All Torch Positions
+        torchArray = new Torch[numTorches];
+        Vector3[] torchPosArray = new Vector3[numTorches]; //All Torch Positions
         int n = 0;
         for (n = 0; n < numTorches; n++){
             float x = Random.Range(mapWidthMin,mapWidthMax);
@@ -37,16 +42,16 @@ public class LevelGenerator : MonoBehaviour {
 
             bool placementAllowed = true;
             for (int n2 = 0; n2 < n; n2++){
-                if (Vector3.Distance(newVec, torchArray[n2]) <
+                if (Vector3.Distance(newVec, torchPosArray[n2]) <
                 MIN_TORCH_DISTANCE) placementAllowed = false;
             }
             if (placementAllowed == true){
-                torchArray[n] = new Vector3(x,y,0f);
+                torchPosArray[n] = new Vector3(x,y,0f);
             }
             else{n-=1;}
         }
         for (int i = 0; i < numTorches; i++){
-            GameObject go = Instantiate(torchprefab,torchArray[i],Quaternion.identity);
+            GameObject go = Instantiate(torchprefab,torchPosArray[i],Quaternion.identity);
 			go.name = go.name + " : " + i.ToString ();
 			go.transform.parent = this.transform;
         }
@@ -146,9 +151,28 @@ public class LevelGenerator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Calculate Torches
+        Torch[] t = getTorches();
+        float player1score = 0; float player2score = 0;
+        for (int i = 1; i < t.Length; i++){
+            player1score += t[i].workCompleted();
+            player2score += 100 - t[i].workCompleted();
+            p1.text = "Player 1: " + player1score.ToString();
+            p2.text = "Player 2: " + player2score.ToString();
+        }
+        Debug.Log(p1.text);
+        Canvas.ForceUpdateCanvases();
 
 	}
     public int getNumTorches(){
         return finalNumTorches;
+    }
+    public Torch[] getTorches(){
+        int j = 0;
+        Transform[] t = this.GetComponentsInChildren<Transform>();
+        torchArray = new Torch[t.Length];
+        for (int i = 1; i < t.Length; i++){
+            torchArray[i] = t[i].gameObject.GetComponent<Torch>();
+        }
+        return torchArray;
     }
 }

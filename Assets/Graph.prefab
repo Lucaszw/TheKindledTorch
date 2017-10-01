@@ -62,3 +62,5 @@ MonoBehaviour:
   MIN_TORCH_DISTANCE: 0.01
   torchprefab: {fileID: 1107934467072478, guid: 5d07d3b41823b415abcd2e8ac3a6bb4d,
     type: 2}
+  p1: {fileID: 0}
+  p2: {fileID: 0}

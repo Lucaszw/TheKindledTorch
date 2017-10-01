@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4356456287318568}
   - component: {fileID: 212141827673504558}
   - component: {fileID: 114985609735804460}
-  - component: {fileID: 111790990822344046}
+  - component: {fileID: 61384791514199864}
   m_Layer: 0
   m_Name: Torch
   m_TagString: node
@@ -42,20 +42,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &111790990822344046
-Animation:
+--- !u!61 &61384791514199864
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1107934467072478}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00000059604645, y: 0.50257176}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.49999976, y: 0.34245402}
+    oldSize: {x: 2.67, y: 3.19}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.67, y: 3.19}
+  m_EdgeRadius: 0
 --- !u!114 &114985609735804460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -72,7 +83,7 @@ MonoBehaviour:
   torchWork: 0
   noFlame: {fileID: 21300012, guid: 5b928c9216e9448edb4af6d9b230f8d6, type: 3}
   halfFlame: {fileID: 21300008, guid: 5b928c9216e9448edb4af6d9b230f8d6, type: 3}
-  fullFlame: {fileID: 7400000, guid: d692bed68aaa549208be9e027ef93f29, type: 2}
+  fullFlame: {fileID: 9100000, guid: e3d150e905f284122b03b71de3b9ceee, type: 2}
 --- !u!212 &212141827673504558
 SpriteRenderer:
   m_ObjectHideFlags: 1

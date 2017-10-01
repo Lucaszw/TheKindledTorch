@@ -26,11 +26,13 @@ public class PlayerController : MonoBehaviour {
 			k.Add("u", Input.GetKey(KeyCode.W));
 			k.Add("l", Input.GetKey(KeyCode.A));
 			k.Add("r", Input.GetKey(KeyCode.D));
+            k.Add("lit", Input.GetKey(KeyCode.E));
 		} else {
 			k.Add("d", Input.GetKey (KeyCode.DownArrow));
 			k.Add("u", Input.GetKey (KeyCode.UpArrow));
 			k.Add("l", Input.GetKey (KeyCode.LeftArrow));
-			k.Add("r", Input.GetKey (KeyCode.RightArrow));			
+			k.Add("r", Input.GetKey (KeyCode.RightArrow));
+            k.Add("unlit", Input.GetKey (KeyCode.Slash));
 		}
 		return k;
 	}
@@ -73,6 +75,31 @@ public class PlayerController : MonoBehaviour {
 			myPlayer.changeSprite (myPlayer.rightSprite, myPlayer.rightAnimation);
 			myStick.updateLocalPosition (myStick.rightOffset);
 		}
+        if (this.playerNumber == 1 && k["lit"]){
+            GameObject go = GameObject.Find("Graph");
+            LevelGenerator lg = (LevelGenerator)go.GetComponent(typeof(LevelGenerator));
+            Torch[] torchArray = lg.getTorches();
+            for (int i = 1; i < torchArray.Length; i++){
+                if
+                (Vector3.Distance(torchArray[i].gameObject.transform.position,
+                position) < 0.7 && torchArray[i]){
+                    torchArray[i].lightTorch(/*TODO:getToolSpeed()*/10);
+                }
+            }
+        }
+        if (this.playerNumber == 2 && k["unlit"]){
+            GameObject go = GameObject.Find("Graph");
+            LevelGenerator lg = (LevelGenerator)go.GetComponent(typeof(LevelGenerator));
+            Torch[] torchArray = lg.getTorches();
+            for (int i = 1; i < torchArray.Length; i++){
+                if
+                (Vector3.Distance(torchArray[i].gameObject.transform.position,
+                position) < 0.7 && torchArray[i]){
+                    torchArray[i].lightTorch(/*TODO:getToolSpeed()*/-10);
+                }
+            }
+     
+        }
 
 		this.gameObject.transform.position = position;
 	}

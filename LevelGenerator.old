@@ -1,0 +1,46 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LevelGenerator : MonoBehaviour {
+
+	// Use this for initialization
+
+    int mapWidth = 10;
+    int M = 100;
+    int N = 50;
+    int mapHeight = 5;
+    double WALL_TRIGGER = 0.5;
+	
+    public GameObject torchprefab;
+
+    void Start () {
+        //TODO:Generate Random Seed
+		SimplexNoise.initSimplexNoise();
+        for (int i = 0; i < M; i++){
+            for(int j = 0; j < N; j++){
+                //Generate Corridors
+                 
+                //Debug.Log(SimplexNoise.noise((double)i/mapWidth,(double)j/mapHeight));
+                //Generate Torch placement
+                double sn = SimplexNoise.noise((double)i/(double)M,
+                (double)j/(double)N);
+                Debug.Log(sn);
+                if (sn < 0 && sn > -0.1){
+                    //if (Random.Range(0f,1.0f) * sn > 0){
+                        GameObject go = Instantiate(torchprefab,new
+                        Vector3((float)i/N*mapWidth, (float)j/N*mapHeight,240f),Quaternion.identity);
+                        Debug.Log(go);
+                    //}
+                }
+            }
+
+        }
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		//Calculate Torches
+
+	}
+}

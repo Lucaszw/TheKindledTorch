@@ -11,14 +11,14 @@ public class Torch : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//TODO:Get list of potential placement locations
-        Vector3[] locArray = {new Vector3(0f,0f,0f)}; 
-        int arrayLength = locArray.Length;
+        //Vector3[] locArray = {new Vector3(0f,0f,0f)}; 
+        //int arrayLength = locArray.Length;
         //Random number
-        int placementIndex = Random.Range(0, arrayLength - 1);
+        //int placementIndex = Random.Range(0, arrayLength - 1);
         //Place torch
         //TODO:HARD CODED FOR TESTING
-        pos = locArray[placementIndex];
-        transform.position = pos;
+        //pos = locArray[placementIndex];
+        //transform.position = pos;
 	}
 
 

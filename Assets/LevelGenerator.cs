@@ -5,33 +5,44 @@ using UnityEngine;
 public class LevelGenerator : MonoBehaviour {
 
 	// Use this for initialization
-    int mapWidth = 100;
-    int mapHeight = 100;
-    double WALL_TRIGGER = 0.5;
-	
+    public float torchMax = 100;
+    public float torchMin = 10;
+    float MIN_TORCH_DISTANCE = 0.1f; //Minimum distance torches allowed
+
+
+    float mapWidthMin = -10; float mapWidthMax = 10;
+    float mapHeightMin = -5; float mapHeightMax = 5;
+    
     public GameObject torchprefab;
 
-    void Start () {
-        //TODO:Generate Random Seed
-		SimplexNoise.initSimplexNoise();
-        for (int i = 0; i < mapWidth; i++){
-            for(int j = 0; j < mapHeight; j++){
-                //Generate Corridors
-            
-                //Debug.Log(SimplexNoise.noise((double)i/mapWidth,(double)j/mapHeight));
-                //Generate Torch placement
-                double sn = SimplexNoise.noise((double)i/mapWidth, (double)j/mapHeight); 
-                //if (sn < 0){
-                    if (Random.Range(0f,1.0f) * sn > 0){
-                        Vector3 pos = new Vector3(-5.0f,-2.0f, 240.0f);
-                        Debug.Log(pos);
-                        GameObject go = Instantiate(torchprefab,pos,Quaternion.identity);
-                        Debug.Log(go);
-                    }
-                //}
-            }
+    int finalNumTorches = 0;
 
+    void Start () {
+        //Randomly Generate Torches
+        int numTorches = (int)Random.Range(torchMin, torchMax);    
+        Vector3[] torchArray = new Vector3[numTorches]; //All Torch Positions
+        int n = 0;
+        for (n = 0; n < numTorches; n++){
+            float x = Random.Range(mapWidthMin,mapWidthMax);
+            float y = Random.Range(mapHeightMin,mapHeightMax);
+            Vector3 newVec = new Vector3(x,y,240f);
+
+            bool placementAllowed = true;
+            for (int n2 = 0; n2 < n; n2++){
+                if (Vector3.Distance(newVec, torchArray[n2]) <
+                MIN_TORCH_DISTANCE) placementAllowed = false;
+            }
+            if (placementAllowed == true){
+                torchArray[n] = new Vector3(x,y,240f);
+            }
+            else{n-=1;}
         }
+        for (int i = 0; i < numTorches; i++){
+            GameObject go = Instantiate(torchprefab,torchArray[i],Quaternion.identity);
+        }
+        finalNumTorches = n;
+        //Place Walls Between Torches
+
 	}
 	
 	// Update is called once per frame
@@ -39,4 +50,7 @@ public class LevelGenerator : MonoBehaviour {
 		//Calculate Torches
 
 	}
+    public int getNumTorches(){
+        return finalNumTorches;
+    }
 }
